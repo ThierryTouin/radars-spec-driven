@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carte Interactive des Radars</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-sA+4H1LG9Q0zPzAuDd2t6wXqf5p2t9sKMGcJf3yy9oM=" crossorigin=""/>
+    <style>
+        #map {
+            height: 500px;
+            width: 100%;
+            margin-top: 20px;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Carte Interactive des Radars</h1>
+        <label for="city-select">Sélectionnez une ville :</label>
+        <select id="city-select">
+            <option value="48.8566,2.3522">Paris</option>
+            <option value="43.7102,7.2620">Nice</option>
+            <option value="45.7640,4.8357">Lyon</option>
+            <option value="44.8378,-0.5792">Bordeaux</option>
+        </select>
+        <div id="map"></div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-o9N1j8AKy2XnYw+g+3+9e1Qb1z7tqgX+4e5xN1bXGh0=" crossorigin=""></script>
+    <script>
+        // Initialisation de la carte
+        const map = L.map('map').setView([48.8566, 2.3522], 13); // Par défaut : Paris
+
+        // Ajouter les tuiles OpenStreetMap
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '© OpenStreetMap'
+        }).addTo(map);
+
+        // Gestion du changement de ville
+        const citySelect = document.getElementById('city-select');
+        citySelect.addEventListener('change', (event) => {
+            const [lat, lon] = event.target.value.split(',');
+            map.setView([lat, lon], 13);
+        });
+    </script>
+</body>
+</html>
