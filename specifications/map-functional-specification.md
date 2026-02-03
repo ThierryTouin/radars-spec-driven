@@ -1,4 +1,4 @@
-# Spécification : Afficher une carte interactive avec localisation et radars
+# Spécification fonctionnelle : Afficher une carte interactive avec localisation et radars
 
 **Titre** : Afficher une carte interactive avec localisation et radars
 
@@ -24,7 +24,6 @@ Créer une page HTML qui affiche une carte interactive. L'utilisateur peut séle
 ## Exigences fonctionnelles
 
 1. **Carte interactive** :  
-   - Utiliser une bibliothèque de cartographie (par exemple, Leaflet.js ou Google Maps).
    - La carte doit être centrée sur une localisation par défaut (ex. : Paris).
 
 2. **Sélection de ville** :  
@@ -42,10 +41,3 @@ Créer une page HTML qui affiche une carte interactive. L'utilisateur peut séle
 1. La carte se charge correctement et affiche la localisation par défaut.
 2. L'utilisateur peut changer de ville et voir la carte se recentrer.
 3. La structure est prête pour intégrer les radars.
-
----
-
-## Assomptions et dépendances
-
-1. Une bibliothèque de cartographie (comme Leaflet.js) sera utilisée.
-2. Les données des radars (localisation et caractéristiques) seront fournies ultérieurement via une API ou un fichier JSON.
