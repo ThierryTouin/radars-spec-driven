@@ -6,7 +6,18 @@
    - Utiliser une bibliothèque comme Leaflet.js ou Google Maps pour afficher la carte interactive.
 
 2. **Dépendances** :
-   - Les données des radars (localisation et caractéristiques) seront fournies ultérieurement via une API ou un fichier JSON.
+   - Les données des radars (localisation et caractéristiques) sont fournies via un appel aux APIs de l'état Français.
+
+3. **Language** :
+   - Le code source de l'application est nodejs.
+
+4. **Docker** :
+   - Pour installer et déployer l'application, seulement docker et docker compose seront necessaires. Toutes les executions nodejs (build, installation des dépedances, ...) seront donc faites à l'intérieur d'un container.
+
+5. **Script** :
+   - Un script bash unique permettra de lancer les commandes dockers pour installer, builder, executer l'application. Pas besoin de documentation sur le script puisqu'un item 'help' sera une option du menu.
+   - Executer le script s'en option (ou avec une option inexistante) affichera le menu d'aide.
+   - Executer le script avec un option existante lancera la commande et rendre la main à la fin. (A part, pour le menu affichant des logs par exemple).
 
 ---
 
