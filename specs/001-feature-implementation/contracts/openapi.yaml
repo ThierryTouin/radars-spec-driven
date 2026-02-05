@@ -1,0 +1,18 @@
+openapi: 3.0.3
+info:
+  title: API Radars Routiers
+  version: 1.0.0
+
+paths:
+  /radars:
+    get:
+      summary: Liste des radars routiers
+      responses:
+        "200":
+          description: Liste des radars
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "../schemas/radar-location.schema.json"

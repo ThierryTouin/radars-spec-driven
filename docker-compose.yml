@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  app:
+    image: node:16
+    container_name: radars_app
+    working_dir: /usr/src/app
+    environment:
+      - NODE_ENV=test
+    volumes:
+      - .:/usr/src/app
+    command: bash -c "npm install && npm test"
+    ports:
+      - "3000:3000"
+    stdin_open: true
+    tty: true
